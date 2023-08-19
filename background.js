@@ -26,6 +26,7 @@ chrome.tabs.onActivated.addListener(async (tab) => {
           {color: '#00FF00'},  
           () => { /* ... */ },
         );
+
       }else{
         chrome.action.setBadgeText({
           tabId: tab.id,
@@ -77,7 +78,8 @@ function getData(url){
   console.log(job);
   var company =  document.querySelector('[data-scroll-id="employer-name"]').childNodes[0].nodeValue;
   console.log(company);
-  navigator.clipboard.writeText(company+"\n"+job+"\n"+url)
+  navigator.clipboard.writeText(company+"\n"+job+"\n"+url);
+  alert("Job Title, Company and Link to Offer copied to clipboard");
 }
 
 chrome.action.onClicked.addListener(async (tab) => {
